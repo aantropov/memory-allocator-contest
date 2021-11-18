@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Results</title>
+<script src = "https://www.google.com/jsapi"></script>
+<script>
+var smallSimple = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['12.60mb',540,1416,962,559,324,174,271],
+['3.15mb',153,476,191,135,78,38,68],
+['6.29mb',288,824,440,279,157,77,136],
+['9.45mb',487,1234,710,422,238,129,203],
+['15.73mb',596,1621,1210,712,405,216,345]];
+var smallShuffle = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['12.60mb',1917,2055,1948,1052,783,610,279],
+['3.15mb',349,572,232,163,92,58,69],
+['6.29mb',757,1090,713,463,243,142,140],
+['9.45mb',1383,1710,1314,757,495,346,210],
+['15.73mb',2388,2430,2541,1413,1075,799,354]];
+var smallRandom = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['12.60mb',904,1622,1000,601,400,196,274],
+['3.15mb',219,510,189,138,76,38,68],
+['6.29mb',438,937,419,290,155,78,137],
+['9.45mb',596,1169,708,447,260,127,207],
+['15.73mb',986,1880,1257,786,512,250,342]];
+var mediumSimple = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['193.74mb',247,240,270,123,124,93,4],
+['382.20mb',573,536,635,305,266,237,6],
+['578.32mb',604,589,1003,458,443,366,8],
+['766.95mb',1002,966,1415,590,580,489,10],
+['961.22mb',1133,1028,1781,759,736,629,12]];
+var mediumShuffle = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['193.74mb',253,245,717,126,128,91,4],
+['382.20mb',571,570,3703,311,281,244,6],
+['578.32mb',594,591,10332,466,470,363,8],
+['766.95mb',1035,906,16565,603,617,477,11],
+['961.22mb',1152,1049,23879,744,784,640,13]];
+var mediumRandom = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['193.74mb',159,155,229,130,119,92,4],
+['382.20mb',291,313,556,301,264,241,6],
+['578.32mb',588,586,982,474,425,353,8],
+['766.95mb',585,610,1320,572,568,448,10],
+['961.22mb',658,642,1827,710,723,594,12]];
+var largeSimple = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['6651.78mb',2556,255,277,173,179,154,203],
+['34310.34mb',2557,889,1414,771,791,749,1186],
+['13507.88mb',2535,402,561,316,328,294,476],
+['21389.20mb',2553,533,842,474,494,449,786],
+['25681.88mb',2988,923,1120,618,620,587,898]];
+var largeShuffle = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['6651.78mb',2544,255,279,173,181,155,204],
+['34310.34mb',2564,890,1437,772,804,746,1199],
+['13507.88mb',2528,403,564,317,333,295,481],
+['21389.20mb',2545,535,848,472,497,450,801],
+['25681.88mb',2993,919,1127,612,629,586,909]];
+var largeRandom = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['6651.78mb',2555,229,275,173,171,154,203],
+['34310.34mb',2560,703,1413,775,767,739,1054],
+['13507.88mb',2547,323,564,317,319,293,471],
+['21389.20mb',2540,421,842,473,475,448,685],
+['25681.88mb',2991,775,1119,616,600,583,796]];
+var randomSimple = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['46029.71mb',5101,583,498,517,504,432,505],
+['13684.70mb',4000,138,122,123,127,112,127],
+['21464.78mb',3988,252,211,208,219,228,218],
+['33837.70mb',4303,379,320,320,331,311,332],
+['37886.17mb',4674,483,404,413,432,392,419]];
+var randomShuffle = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['46029.71mb',5099,582,499,517,504,433,508],
+['13684.70mb',3980,138,122,123,127,112,127],
+['21464.78mb',4047,252,211,208,219,228,218],
+['33837.70mb',4327,379,322,320,331,311,333],
+['37886.17mb',4666,482,405,413,431,392,422]];
+var randomRandom = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['46029.71mb',5106,463,506,520,493,436,513],
+['13684.70mb',3277,111,122,125,130,115,127],
+['21464.78mb',4032,213,214,211,221,232,221],
+['33837.70mb',4201,304,323,323,330,321,339],
+['37886.17mb',4682,378,402,416,418,410,418]];
+var smallSimpleMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['12.60mb',37.79,34.55,0.00,50.55,0.00,0.00,6.47],
+['3.15mb',8.73,4.38,0.00,11.89,0.00,0.00,0.87],
+['6.29mb',20.47,14.95,0.00,24.78,0.00,0.00,1.74],
+['9.45mb',40.94,37.70,0.00,21.63,0.00,0.00,8.61],
+['15.73mb',32.35,31.41,0.00,47.41,0.00,0.00,7.34]];
+var smallShuffleMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['12.60mb',40.10,34.55,0.00,50.55,0.00,0.00,6.47],
+['3.15mb',8.89,4.38,0.00,11.89,0.00,0.00,0.87],
+['6.29mb',19.58,15.29,0.00,24.78,0.00,0.00,1.74],
+['9.45mb',43.25,37.70,0.00,21.63,0.00,0.00,8.61],
+['15.73mb',37.18,31.41,0.00,47.41,0.00,0.00,7.34]];
+var smallRandomMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['12.60mb',39.94,34.55,0.00,50.55,0.00,0.00,4.46],
+['3.15mb',10.19,4.38,0.00,11.89,0.00,0.00,0.00],
+['6.29mb',19.48,13.78,0.00,24.78,0.00,0.00,1.74],
+['9.45mb',14.67,10.62,0.00,21.63,0.00,0.00,7.61],
+['15.73mb',31.84,31.41,0.00,47.41,0.00,0.00,0.00]];
+var mediumSimpleMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['193.74mb',342.77,342.76,0.00,61.79,54.82,0.00,270.27],
+['382.20mb',753.97,753.97,0.00,129.82,116.85,2.60,359.36],
+['578.32mb',557.85,557.85,0.00,446.72,421.72,0.00,355.63],
+['766.95mb',1052.30,1052.29,0.00,258.08,233.08,0.00,593.85],
+['961.22mb',1371.23,1371.22,0.00,63.82,38.82,0.00,784.35]];
+var mediumShuffleMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['193.74mb',342.77,342.76,0.00,61.79,54.82,0.00,270.27],
+['382.20mb',753.97,753.97,0.00,129.82,116.85,2.60,359.36],
+['578.32mb',557.85,557.85,0.00,446.72,421.72,0.00,355.63],
+['766.95mb',1052.30,1052.29,0.00,258.08,233.08,0.00,593.85],
+['961.22mb',1371.23,1371.22,0.00,63.82,38.82,0.00,784.35]];
+var mediumRandomMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['193.74mb',86.12,86.11,0.00,61.79,54.82,0.00,192.07],
+['382.20mb',174.42,174.41,0.00,129.82,116.84,0.00,126.86],
+['578.32mb',557.85,557.85,0.00,446.72,0.00,0.00,211.29],
+['766.95mb',377.28,377.28,0.00,258.08,233.08,0.00,378.36],
+['961.22mb',215.18,215.18,0.00,63.82,38.82,0.00,362.45]];
+var largeSimpleMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['6651.78mb',120821.30,5147.31,13.30,2148.05,992.10,562.34,3199.84],
+['34310.34mb',93162.73,19683.34,68.85,31743.76,836.54,1824.41,17747.97],
+['13507.88mb',113969.21,9449.06,27.08,3394.18,202.44,984.49,7643.20],
+['21389.20mb',106083.88,12789.71,42.85,12133.41,681.88,1311.24,11045.26],
+['25681.88mb',103847.23,14973.70,51.62,7783.29,464.25,1250.86,12415.86]];
+var largeShuffleMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['6651.78mb',120821.30,5147.31,13.30,2148.05,992.10,562.34,3199.84],
+['34310.34mb',93162.73,19683.34,68.85,31743.76,836.54,1824.41,17747.97],
+['13507.88mb',113969.21,9449.06,27.08,3394.18,202.44,984.49,7643.20],
+['21389.20mb',106083.88,12789.71,42.85,12133.41,681.88,1311.24,11045.26],
+['25681.88mb',103847.23,14973.70,51.62,7783.29,464.25,1250.86,12415.86]];
+var largeRandomMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['6651.78mb',120821.30,3095.30,0.00,2148.05,0.00,0.00,634.69],
+['34310.34mb',93162.73,7371.25,0.00,31743.76,0.00,0.00,5546.21],
+['13507.88mb',113969.21,4319.02,0.00,3394.18,0.00,0.00,2593.09],
+['21389.20mb',106083.88,4581.64,0.00,12133.41,0.00,0.00,3012.23],
+['25681.88mb',103847.23,4713.62,0.00,7783.29,0.00,0.00,1889.87]];
+var randomSimpleMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['46029.71mb',3063.82,16300.12,90.12,7857.91,327.73,5270.51,90.12],
+['13684.70mb',2077.95,2731.39,26.79,26.79,26.79,2731.38,26.79],
+['21464.78mb',3143.61,8289.38,42.02,42.02,42.02,11367.37,42.02],
+['33837.70mb',1852.66,9767.53,66.25,66.25,66.25,8228.49,66.25],
+['37886.17mb',2648.44,13029.35,74.17,164.43,776.10,12388.05,90.52]];
+var randomShuffleMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['46029.71mb',3063.83,16300.12,90.12,7857.91,327.73,5270.51,90.12],
+['13684.70mb',2077.69,2731.39,26.79,26.79,26.79,2731.38,26.79],
+['21464.78mb',3143.61,8289.38,42.02,42.02,42.02,11367.37,42.02],
+['33837.70mb',1852.66,9767.53,66.25,66.25,66.25,8228.49,66.25],
+['37886.17mb',2648.44,13029.35,74.17,164.43,776.10,12388.05,90.52]];
+var randomRandomMemory = [['Total allocated size','class AlexeiMikhailov::Allocator','class OlegApanasik::TMemoryAllocator','class DefaultMallocAllocator','class DaniilPavlenko::FastAllocator','class AlexeyAntropov::Sailor::Memory::HeapAllocator','class DenisPerevalov::Oneshotlocator','class AntonShatalov::Ololokator'],
+['46029.71mb',0.00,5014.06,0.00,7857.91,0.00,0.00,0.00],
+['13684.70mb',0.00,0.00,0.00,26.79,26.79,2731.38,0.00],
+['21464.78mb',3143.61,4185.36,0.00,42.02,42.02,11367.37,0.00],
+['33837.70mb',272.72,2585.49,0.00,66.25,66.25,8228.49,0.00],
+['37886.17mb',0.00,0.00,0.00,164.43,0.00,4180.01,0.00]];
+  google.load("visualization", "1", {packages:["corechart"]});  google.setOnLoadCallback(drawCharts);  function to_float(str_mb) {     return parseFloat(str_mb.substring(0, str_mb.length - 2));  }	function d_sort(d) {  d.sort(function(x, y) {      let a = to_float(x[0]);      let b = to_float(y[0]);      if (a < b) return -1;      if (a > b) return 1;      return 0;  });  return d;}function drawChart(d, div_id, title) {  var data = google.visualization.arrayToDataTable(d_sort(d));  var options = {      title: title,      hAxis: {title: 'Total allocated'},      vAxis: {title: 'Ms'}  };  var chart = new google.visualization.AreaChart(document.getElementById(div_id));  chart.draw(data, options);}function drawBars(d, div_id, title) {var data = google.visualization.arrayToDataTable(d_sort(d));var options = {	title: title,	hAxis : {title: 'Total allocated'},	vAxis : {title: 'Mb'}};var chart = new google.visualization.ColumnChart(document.getElementById(div_id));chart.draw(data, options);}  function drawCharts() {   drawChart(smallSimple,"smallSimple", "Simple consumed time");   drawChart(smallShuffle,"smallShuffle", "Shuffle consumed time");   drawChart(smallRandom, "smallRandom", "Random consumed time");   drawChart(mediumSimple,"mediumSimple", "Simple consumed time");   drawChart(mediumShuffle,"mediumShuffle", "Shuffle consumed time");   drawChart(mediumRandom,"mediumRandom", "Random consumed time");   drawChart(largeSimple, "largeSimple",  "Simple consumed time");   drawChart(largeShuffle,"largeShuffle", "Shuffle consumed time");   drawChart(largeRandom, "largeRandom",  "Random consumed time");   drawChart(randomSimple, "randomSimple", "Simple consumed time");   drawChart(randomShuffle,"randomShuffle","Shuffle consumed time");   drawChart(randomRandom, "randomRandom", "Random consumed time");	drawBars(smallSimpleMemory, "smallSimpleMemory", "Simple memory overhead");	drawBars(smallShuffleMemory, "smallShuffleMemory", "Shuffle memory overhead");	drawBars(smallRandomMemory, "smallRandomMemory", "Random memory overhead");	drawBars(mediumSimpleMemory, "mediumSimpleMemory", "Simple memory overhead");	drawBars(mediumShuffleMemory, "mediumShuffleMemory", "Shuffle memory overhead");	drawBars(mediumRandomMemory, "mediumRandomMemory", "Random memory overhead");	drawBars(largeSimpleMemory, "largeSimpleMemory", "Simple memory overhead");	drawBars(largeShuffleMemory, "largeShuffleMemory", "Shuffle memory overhead");	drawBars(largeRandomMemory, "largeRandomMemory", "Random memory overhead");	drawBars(randomSimpleMemory, "randomSimpleMemory", "Simple memory overhead");	drawBars(randomShuffleMemory, "randomShuffleMemory", "Shuffle memory overhead");	drawBars(randomRandomMemory, "randomRandomMemory", "Random memory overhead");   } </script>
+<style>.container {    display: flex;}.timegraph {    flex: 1;    width: 50%;    padding: 5px;    margin: 5px;    height: 200px;}.memgraph {    flex: 1;    width: 40%;    padding: 5px;    margin: 5px;    height: 200px;}}</style></head>
+<body>
+<hr/>
+<h2>Small allocations [1,32] bytes</h2>
+<div class="container"><div id="smallSimple" class="timegraph"></div><div id="smallSimpleMemory" class="memgraph"></div></div><div class="container"><div id="smallShuffle" class="timegraph"></div><div id="smallShuffleMemory" class="memgraph"></div></div><div class="container"><div id="smallRandom" class="timegraph"></div><div id="smallRandomMemory" class="memgraph"></div></div><hr/><h2>Medium allocations [128,40000] bytes</h2><div class="container"><div id="mediumSimple" class="timegraph"></div><div id="mediumSimpleMemory" class="memgraph"></div></div><div class="container"><div id="mediumShuffle" class="timegraph"></div><div id="mediumShuffleMemory" class="memgraph"></div></div><div class="container"><div id="mediumRandom" class="timegraph"></div><div id="mediumRandomMemory" class="memgraph"></div></div><hr/><h2>Large allocations [4000000,800000000] bytes</h2><div class="container"><div id="largeSimple" class="timegraph"></div><div id="largeSimpleMemory" class="memgraph"></div></div><div class="container"><div id="largeShuffle" class="timegraph"></div><div id="largeShuffleMemory" class="memgraph"></div></div><div class="container"><div id="largeRandom" class="timegraph"></div><div id="largeRandomMemory" class="memgraph"></div></div><hr/><h2>Random allocations</h2><div class="container"><div id="randomSimple" class="timegraph"></div><div id="randomSimpleMemory" class="memgraph"></div></div><div class="container"><div id="randomShuffle" class="timegraph"></div><div id="randomShuffleMemory" class="memgraph"></div></div><div class="container"><div id="randomRandom" class="timegraph"></div><div id="randomRandomMemory" class="memgraph"></div></div><hr/>
+</body>
+</html>

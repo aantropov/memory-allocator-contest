@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Results</title>
+<script src = "https://www.google.com/jsapi"></script>
+<script>
+var smallSimple = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['3.15mb',529],
+['12.60mb',1433],
+['6.29mb',842],
+['9.45mb',1235],
+['15.73mb',1614]];
+var smallShuffle = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['3.15mb',621],
+['12.60mb',2029],
+['6.29mb',1087],
+['9.45mb',1659],
+['15.73mb',2389]];
+var smallRandom = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['3.15mb',554],
+['12.60mb',1607],
+['6.29mb',942],
+['9.45mb',1173],
+['15.73mb',1865]];
+var mediumSimple = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['193.74mb',243],
+['382.20mb',545],
+['578.32mb',555],
+['766.95mb',891],
+['961.22mb',1023]];
+var mediumShuffle = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['193.74mb',242],
+['382.20mb',562],
+['578.32mb',555],
+['766.95mb',894],
+['961.22mb',1032]];
+var mediumRandom = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['193.74mb',154],
+['382.20mb',276],
+['578.32mb',547],
+['766.95mb',546],
+['961.22mb',624]];
+var largeSimple = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['6651.78mb',247],
+['13507.88mb',395],
+['34310.34mb',865],
+['21389.20mb',531],
+['25681.88mb',882]];
+var largeShuffle = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['6651.78mb',248],
+['13507.88mb',395],
+['34310.34mb',863],
+['21389.20mb',531],
+['25681.88mb',885]];
+var largeRandom = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['6651.78mb',223],
+['13507.88mb',318],
+['34310.34mb',684],
+['21389.20mb',417],
+['25681.88mb',745]];
+var randomSimple = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['13684.70mb',127],
+['46029.71mb',547],
+['21464.78mb',246],
+['33837.70mb',362],
+['37886.17mb',459]];
+var randomShuffle = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['13684.70mb',127],
+['46029.71mb',547],
+['21464.78mb',246],
+['33837.70mb',362],
+['37886.17mb',459]];
+var randomRandom = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['13684.70mb',106],
+['46029.71mb',435],
+['21464.78mb',208],
+['33837.70mb',291],
+['37886.17mb',358]];
+var smallSimpleMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['3.15mb',9.39],
+['12.60mb',41.31],
+['6.29mb',19.95],
+['9.45mb',44.33],
+['15.73mb',31.41]];
+var smallShuffleMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['3.15mb',7.09],
+['12.60mb',34.56],
+['6.29mb',18.39],
+['9.45mb',43.67],
+['15.73mb',31.41]];
+var smallRandomMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['3.15mb',7.93],
+['12.60mb',34.56],
+['6.29mb',19.95],
+['9.45mb',16.44],
+['15.73mb',31.41]];
+var mediumSimpleMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['193.74mb',342.77],
+['382.20mb',753.97],
+['578.32mb',557.85],
+['766.95mb',1052.30],
+['961.22mb',1371.23]];
+var mediumShuffleMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['193.74mb',342.77],
+['382.20mb',753.97],
+['578.32mb',557.85],
+['766.95mb',1052.30],
+['961.22mb',1371.23]];
+var mediumRandomMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['193.74mb',86.12],
+['382.20mb',174.42],
+['578.32mb',557.85],
+['766.95mb',377.28],
+['961.22mb',215.18]];
+var largeSimpleMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['6651.78mb',5147.32],
+['13507.88mb',9449.07],
+['34310.34mb',19683.35],
+['21389.20mb',12789.72],
+['25681.88mb',14973.71]];
+var largeShuffleMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['6651.78mb',5147.32],
+['13507.88mb',9449.07],
+['34310.34mb',19683.35],
+['21389.20mb',12789.72],
+['25681.88mb',14973.71]];
+var largeRandomMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['6651.78mb',3095.30],
+['13507.88mb',4319.03],
+['34310.34mb',7371.26],
+['21389.20mb',4581.66],
+['25681.88mb',4713.63]];
+var randomSimpleMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['13684.70mb',2731.39],
+['46029.71mb',16300.12],
+['21464.78mb',8289.38],
+['33837.70mb',9767.54],
+['37886.17mb',13029.36]];
+var randomShuffleMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['13684.70mb',2731.39],
+['46029.71mb',16300.12],
+['21464.78mb',8289.39],
+['33837.70mb',9767.54],
+['37886.17mb',13029.36]];
+var randomRandomMemory = [['Total allocated size','class OlegApanasik::TMemoryAllocator'],
+['13684.70mb',679.38],
+['46029.71mb',2962.05],
+['21464.78mb',4185.36],
+['33837.70mb',533.49],
+['37886.17mb',0.00]];
+  google.load("visualization", "1", {packages:["corechart"]});  google.setOnLoadCallback(drawCharts);  function to_float(str_mb) {     return parseFloat(str_mb.substring(0, str_mb.length - 2));  }	function d_sort(d) {  d.sort(function(x, y) {      let a = to_float(x[0]);      let b = to_float(y[0]);      if (a < b) return -1;      if (a > b) return 1;      return 0;  });  return d;}function drawChart(d, div_id, title) {  var data = google.visualization.arrayToDataTable(d_sort(d));  var options = {      title: title,      hAxis: {title: 'Total allocated'},      vAxis: {title: 'Ms'}  };  var chart = new google.visualization.AreaChart(document.getElementById(div_id));  chart.draw(data, options);}function drawBars(d, div_id, title) {var data = google.visualization.arrayToDataTable(d_sort(d));var options = {	title: title,	hAxis : {title: 'Total allocated'},	vAxis : {title: 'Mb'}};var chart = new google.visualization.ColumnChart(document.getElementById(div_id));chart.draw(data, options);}  function drawCharts() {   drawChart(smallSimple,"smallSimple", "Simple consumed time");   drawChart(smallShuffle,"smallShuffle", "Shuffle consumed time");   drawChart(smallRandom, "smallRandom", "Random consumed time");   drawChart(mediumSimple,"mediumSimple", "Simple consumed time");   drawChart(mediumShuffle,"mediumShuffle", "Shuffle consumed time");   drawChart(mediumRandom,"mediumRandom", "Random consumed time");   drawChart(largeSimple, "largeSimple",  "Simple consumed time");   drawChart(largeShuffle,"largeShuffle", "Shuffle consumed time");   drawChart(largeRandom, "largeRandom",  "Random consumed time");   drawChart(randomSimple, "randomSimple", "Simple consumed time");   drawChart(randomShuffle,"randomShuffle","Shuffle consumed time");   drawChart(randomRandom, "randomRandom", "Random consumed time");	drawBars(smallSimpleMemory, "smallSimpleMemory", "Simple memory overhead");	drawBars(smallShuffleMemory, "smallShuffleMemory", "Shuffle memory overhead");	drawBars(smallRandomMemory, "smallRandomMemory", "Random memory overhead");	drawBars(mediumSimpleMemory, "mediumSimpleMemory", "Simple memory overhead");	drawBars(mediumShuffleMemory, "mediumShuffleMemory", "Shuffle memory overhead");	drawBars(mediumRandomMemory, "mediumRandomMemory", "Random memory overhead");	drawBars(largeSimpleMemory, "largeSimpleMemory", "Simple memory overhead");	drawBars(largeShuffleMemory, "largeShuffleMemory", "Shuffle memory overhead");	drawBars(largeRandomMemory, "largeRandomMemory", "Random memory overhead");	drawBars(randomSimpleMemory, "randomSimpleMemory", "Simple memory overhead");	drawBars(randomShuffleMemory, "randomShuffleMemory", "Shuffle memory overhead");	drawBars(randomRandomMemory, "randomRandomMemory", "Random memory overhead");   } </script>
+<style>.container {    display: flex;}.timegraph {    flex: 1;    width: 50%;    padding: 5px;    margin: 5px;    height: 200px;}.memgraph {    flex: 1;    width: 40%;    padding: 5px;    margin: 5px;    height: 200px;}}</style></head>
+<body>
+<hr/>
+<h2>Small allocations [1,32] bytes</h2>
+<div class="container"><div id="smallSimple" class="timegraph"></div><div id="smallSimpleMemory" class="memgraph"></div></div><div class="container"><div id="smallShuffle" class="timegraph"></div><div id="smallShuffleMemory" class="memgraph"></div></div><div class="container"><div id="smallRandom" class="timegraph"></div><div id="smallRandomMemory" class="memgraph"></div></div><hr/><h2>Medium allocations [128,40000] bytes</h2><div class="container"><div id="mediumSimple" class="timegraph"></div><div id="mediumSimpleMemory" class="memgraph"></div></div><div class="container"><div id="mediumShuffle" class="timegraph"></div><div id="mediumShuffleMemory" class="memgraph"></div></div><div class="container"><div id="mediumRandom" class="timegraph"></div><div id="mediumRandomMemory" class="memgraph"></div></div><hr/><h2>Large allocations [4000000,800000000] bytes</h2><div class="container"><div id="largeSimple" class="timegraph"></div><div id="largeSimpleMemory" class="memgraph"></div></div><div class="container"><div id="largeShuffle" class="timegraph"></div><div id="largeShuffleMemory" class="memgraph"></div></div><div class="container"><div id="largeRandom" class="timegraph"></div><div id="largeRandomMemory" class="memgraph"></div></div><hr/><h2>Random allocations</h2><div class="container"><div id="randomSimple" class="timegraph"></div><div id="randomSimpleMemory" class="memgraph"></div></div><div class="container"><div id="randomShuffle" class="timegraph"></div><div id="randomShuffleMemory" class="memgraph"></div></div><div class="container"><div id="randomRandom" class="timegraph"></div><div id="randomRandomMemory" class="memgraph"></div></div><hr/>
+</body>
+</html>

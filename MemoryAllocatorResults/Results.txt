@@ -1,0 +1,65 @@
+AlexeiMikhailov    Score: 19.95,
+    Total memory overhead: 1649968.62mb,
+    Total time: 123.33sec
+
+OlegApanasik    Score: 69.03,
+    Total memory overhead: 261407.64mb,
+    Total time: 36.16sec
+
+DefaultMallocAllocator   Score: 83.47,
+    Total memory overhead: 1087.31mb,
+    Total time: 95.90sec
+
+DaniilPavlenko    Score: 93.23,
+    Total memory overhead: 199456.14mb,
+    Total time: 25.80sec
+
+AlexeyAntropov    Score: 120.41,
+    Total memory overhead: 11122.47mb,
+    Total time: 25.23sec
+
+DenisPerevalov    Score: 159.17,
+    Total memory overhead: 118376.04mb,
+    Total time: 20.23sec
+
+AntonShatalov    Score: 831.56,
+    Total memory overhead: 124550.46mb,
+    Total time: 17.84sec
+
+---------------------------------------
+
+    Small:
+AlexeiMikhailov       6.53
+OlegApanasik          4.88
+DefaultMallocAlloc    19.57
+DaniilPavlenko        7.15
+AlexeyAntropov        48.07
+DenisPerevalov        94.25  *
+AntonShatalov         47.46
+
+    Medium:
+AlexeiMikhailov        16.17
+OlegApanasik           15.12
+DefaultMallocAlloc     10.72
+DaniilPavlenko         22.69
+AlexeyAntropov         24.89
+DenisPerevalov         39.80
+AntonShatalov          932.79  *
+
+    Large:
+AlexeiMikhailov        1.02
+OlegApanasik           16.60
+DefaultMallocAlloc     16.43
+DaniilPavlenko         20.63
+AlexeyAntropov         27.95
+DenisPerevalov         29.72   *
+AntonShatalov          14.90
+
+    Random:
+AlexeiMikhailov         0.57
+OlegApanasik            33.96
+DefaultMallocAlloc      43.72
+DaniilPavlenko          41.60
+AlexeyAntropov          42.65
+DenisPerevalov          37.60
+AntonShatalov           43.75   *
