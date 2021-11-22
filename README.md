@@ -50,7 +50,7 @@ The results are in folder `MemoryAllocatorResults`, especially `Results.txt` fil
 
 * DaniilPavlenko: uses single multiset to store all free memory chunks.
 
-* AlexeyAntropov: .   
+* AlexeyAntropov: uses multi-pools O(1) for small allocations [1, 256] and heap allocator with varied block size, ~O(sqrt(n)) for alloc and O(1) for free, where n is num of blocks in free list.
  
 * DenisPerevalov: uses several 2^n pools without reusing. Parameters (`table[]`) are tweaked specially to maximize the scores.
         
