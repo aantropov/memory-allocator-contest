@@ -3,6 +3,13 @@
 This repo is an evaluation platform for memory allocators in C++. 
 We comparing self-made allocators with default `malloc`/`free` and participants.
 
+## Why?
+
+Default C's `malloc`/`free` allocator is effective in memory consumption, but works slow, 
+when comparing with other approaches which are not-so strong in memory economy.
+
+So in this contest we testing custom-developed allocators with the standard one by measuring average relation speed to memory overhead.
+
 ## Scores computation
 
 To compare allocators we compute and sum scores for several tests: small, medium, large, random.
